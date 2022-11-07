@@ -29,7 +29,7 @@ cat /etc/*release*
 echo "=================================="
 echo -e "full uname output:\n$(uname -a)"
 
-if [[ "$OSTYPE" =~ "Darwin" ]]; then
+if [[ "$OSTYPE" =~ darwin* ]] || [[ "$(uname -s)" =~ darwin ]]; then
   OIFS="$IFS"
   IFS=$'\n'
   set $(sw_vers) >/dev/null
